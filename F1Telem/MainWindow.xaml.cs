@@ -1,15 +1,10 @@
 ﻿using F1Game.UDP;
 using F1Game.UDP.Enums;
 using F1Game.UDP.Packets;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net.Sockets;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using WinForms = System.Windows.Forms;
 using WpfMessageBox = System.Windows.MessageBox;
@@ -162,26 +157,6 @@ public partial class MainWindow : Window
 
         Log("Stopped.");
         RefreshLapPickerUi();
-    }
-
-    private void DownloadBtn_Click(object sender, RoutedEventArgs e)
-    {
-        if (LapPicker.SelectedItem is not LapRecord lap)
-        {
-            WpfMessageBox.Show("Select a completed lap first.");
-            return;
-        }
-
-        var dlg = new Microsoft.Win32.SaveFileDialog
-        {
-            Filter = "JSON (*.json)|*.json",
-            FileName = lap.SuggestedFileName
-        };
-
-        if (dlg.ShowDialog() != true) return;
-
-        SaveLapJson(lap, dlg.FileName);
-        Log($"Saved: {dlg.FileName}");
     }
 
     private async Task ListenLoopAsync(int port, CancellationToken ct)
@@ -403,7 +378,6 @@ public partial class MainWindow : Window
         LapPicker.ItemsSource = _completed;
 
         LapPicker.IsEnabled = _completed.Count > 0;
-        DownloadBtn.IsEnabled = _completed.Count > 0;
 
         if (_completed.Count > 0)
             LapPicker.SelectedItem = _completed[^1];

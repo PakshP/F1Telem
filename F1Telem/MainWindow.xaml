@@ -1,7 +1,7 @@
 ﻿<Window x:Class="F1Recorder.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="F1 25 Telemetry Recorder" Height="620" Width="1100">
+        Title="F1 25 Telemetry Recorder" Height="334" Width="661">
     <Grid Margin="12">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -9,25 +9,26 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Vertical" Margin="0,0,0,10">
-            <WrapPanel VerticalAlignment="Top">
+        <StackPanel Grid.Row="0" Orientation="Vertical" Margin="0,0,0,10" HorizontalAlignment="Center">
+            <WrapPanel VerticalAlignment="Top" HorizontalAlignment="Center">
                 <TextBlock Text="Port:" VerticalAlignment="Center"/>
                 <TextBox x:Name="PortBox" Width="90" Margin="8,0,16,0" Text="22026"/>
 
                 <Button x:Name="StartBtn" Content="Start" Width="120" Margin="0,0,8,0" Click="StartBtn_Click"/>
                 <Button x:Name="StopBtn" Content="Stop" Width="120" Margin="0,0,16,0" IsEnabled="False" Click="StopBtn_Click"/>
 
-                <CheckBox x:Name="AutoSaveChk" Content="Auto-save completed laps" Margin="0,0,16,0" IsChecked="True" VerticalAlignment="Center"/>
-
-                <TextBlock Text="Completed lap:" VerticalAlignment="Center"/>
-                <ComboBox x:Name="LapPicker" Width="360" Margin="8,0,8,0" IsEnabled="False"/>
-                <Button x:Name="DownloadBtn" Content="Download Selected" Width="170" IsEnabled="False" Click="DownloadBtn_Click"/>
+                <CheckBox x:Name="AutoSaveChk" Content="Auto-save completed laps" Margin="0,0,0,0" IsChecked="True" VerticalAlignment="Center"/>
             </WrapPanel>
 
-            <WrapPanel Margin="0,10,0,0">
+            <WrapPanel Margin="0,10,0,0" HorizontalAlignment="Center">
+                <TextBlock Text="Completed lap:" VerticalAlignment="Center"/>
+                <ComboBox x:Name="LapPicker" Width="476" IsEnabled="False"/>
+            </WrapPanel>
+
+            <WrapPanel Margin="0,10,0,0" HorizontalAlignment="Center">
                 <TextBlock Text="Auto-save folder:" VerticalAlignment="Center"/>
-                <TextBox x:Name="AutoSaveFolderBox" Width="640" Margin="8,0,8,0" IsReadOnly="True"/>
-                <Button x:Name="BrowseFolderBtn" Content="Browse..." Width="110" Click="BrowseFolderBtn_Click"/>
+                <TextBox x:Name="AutoSaveFolderBox" Width="375" IsReadOnly="True"/>
+                <Button x:Name="BrowseFolderBtn" Content="Browse..." Width="90" Click="BrowseFolderBtn_Click"/>
             </WrapPanel>
         </StackPanel>
 
