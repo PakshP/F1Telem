@@ -1,0 +1,50 @@
+﻿<Window x:Class="F1Recorder.TelemetryViewerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:oxy="http://oxyplot.org/wpf"
+        Title="Telemetry Viewer" Height="706" Width="1200"
+        WindowStartupLocation="CenterOwner">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <DockPanel Grid.Row="0" Margin="0,0,0,10">
+            <TextBlock x:Name="HeaderText" FontSize="16" FontWeight="SemiBold" DockPanel.Dock="Left"/>
+            <TextBlock x:Name="StatsText" FontSize="13" Opacity="0.85" DockPanel.Dock="Right"/>
+        </DockPanel>
+
+        <!-- Charts -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <UniformGrid Columns="2" Rows="3" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+
+                <GroupBox Header="Speed (kph) vs Distance (m)" Margin="0,0,10,10">
+                    <oxy:PlotView x:Name="SpeedPlot"/>
+                </GroupBox>
+
+                <GroupBox Header="Brake (0..1) vs Distance (m)" Margin="0,0,0,10">
+                    <oxy:PlotView x:Name="BrakePlot"/>
+                </GroupBox>
+
+                <GroupBox Header="Throttle (0..1) vs Distance (m)" Margin="0,0,10,10">
+                    <oxy:PlotView x:Name="ThrottlePlot"/>
+                </GroupBox>
+
+                <GroupBox Header="Steer (-1..1) vs Distance (m)" Margin="0,0,0,10">
+                    <oxy:PlotView x:Name="SteerPlot"/>
+                </GroupBox>
+
+                <GroupBox Header="Gear vs Distance (m)" Margin="0,0,10,0" Height="196">
+                    <oxy:PlotView x:Name="GearPlot"/>
+                </GroupBox>
+
+                <GroupBox Header="DRS (0/1) vs Distance (m)" Margin="0,0,0,0">
+                    <oxy:PlotView x:Name="DrsPlot"/>
+                </GroupBox>
+
+            </UniformGrid>
+        </ScrollViewer>
+    </Grid>
+</Window>

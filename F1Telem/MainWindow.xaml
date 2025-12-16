@@ -22,7 +22,8 @@
 
             <WrapPanel Margin="0,10,0,0" HorizontalAlignment="Center">
                 <TextBlock Text="Completed lap:" VerticalAlignment="Center"/>
-                <ComboBox x:Name="LapPicker" Width="476" IsEnabled="False"/>
+                <ComboBox x:Name="LapPicker" Width="400" IsEnabled="False"/>
+                <Button x:Name="ViewLapBtn" Content="Visualize Lap" Width="100" IsEnabled="False" Click="ViewLapBtn_Click"/>
             </WrapPanel>
 
             <WrapPanel Margin="0,10,0,0" HorizontalAlignment="Center">

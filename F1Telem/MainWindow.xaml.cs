@@ -105,6 +105,18 @@ public partial class MainWindow : Window
         Log($"Auto-save folder set: {dlg.SelectedPath}");
     }
 
+    private void ViewLapBtn_Click(object sender, RoutedEventArgs e)
+    {
+        if (LapPicker.SelectedItem is not LapRecord lap)
+        {
+            WpfMessageBox.Show("Select a lap first.");
+            return;
+        }
+
+        var win = new TelemetryViewerWindow(lap) { Owner = this };
+        win.Show();
+    }
+
     private async void StartBtn_Click(object sender, RoutedEventArgs e)
     {
         if (_cts != null) return;
@@ -378,6 +390,8 @@ public partial class MainWindow : Window
         LapPicker.ItemsSource = _completed;
 
         LapPicker.IsEnabled = _completed.Count > 0;
+        ViewLapBtn.IsEnabled = _completed.Count > 0;
+
 
         if (_completed.Count > 0)
             LapPicker.SelectedItem = _completed[^1];

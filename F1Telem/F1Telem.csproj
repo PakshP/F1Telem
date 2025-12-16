@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <PackageReference Include="F1Game.UDP" Version="25.1.0" />
+    <PackageReference Include="OxyPlot.Wpf" Version="2.2.0" />
   </ItemGroup>
 
 </Project>
