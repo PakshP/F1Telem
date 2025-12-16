@@ -23,6 +23,45 @@ This tool is designed to help drivers identify where they gain or lose time by c
 
 ---
 
+## 📂 Exported JSON Format
+
+Each completed lap is exported as a single JSON file:
+
+```json
+{
+  "time_normalized": {
+    "0": 0.00,
+    "1": 12.34
+  },
+  "speed": [
+    { "x": 0, "y": 123 },
+    { "x": 1, "y": 125 }
+  ],
+  "brake": [
+    { "x": 0, "y": 0.000 }
+  ],
+  "throttle": [
+    { "x": 0, "y": 1.000 }
+  ],
+  "gear": [
+    { "x": 0, "y": 3 }
+  ],
+  "steer": [
+    { "x": 0, "y": -0.123 }
+  ],
+  "drs": [
+    { "x": 0, "y": 1 }
+  ],
+  "lap_stats": {
+    "speed_top": 323,
+    "speed_average": 244.4,
+    "throttle_average": 85,
+    "brake_average": 7
+  }
+}
+```
+---
+
 ## 🛠 Tech Stack
 
 - **C#**
