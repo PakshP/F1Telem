@@ -1,7 +1,7 @@
 ﻿<Window x:Class="F1Recorder.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="F1 25 UDP Recorder" Height="620" Width="1100">
+        Title="F1 25 Telemetry Recorder" Height="620" Width="1100">
     <Grid Margin="12">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
