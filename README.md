@@ -9,7 +9,6 @@ This tool is designed to help drivers identify where they gain or lose time by c
 ## 🚀 Features
 
 - 📡 Live UDP telemetry listener for **F1 25**
-- 🏁 Correctly captures **Garage → Flying Lap → Timed Lap**
 - 📏 Distance-normalized lap data
 - 💾 User-selected save location with **automatic lap saving**
 - 📥 Manual download of previous laps at any time
@@ -78,6 +77,15 @@ Each completed lap is exported as a single JSON file:
 - F1 25
 - .NET 8 SDK
 - Visual Studio 2022 or newer
+
+---
+
+## 🏎️ F1 Requirements
+- UDP Telemetry **ON**
+- UDP Broadcast Mode **OFF**
+- UDP Port **(default=20777)** | Change F1Telem port to match.
+- UDP Send Rate **60hz** (20hz-60hz, higher is better)
+- UDP Format **2025**
 
 ---
 
