@@ -53,10 +53,10 @@ Each completed lap is exported as a single JSON file:
     { "x": 0, "y": 1 }
   ],
   "lap_stats": {
-    "speed_top": 323,
-    "speed_average": 244.4,
-    "throttle_average": 85,
-    "brake_average": 7
+    "speed_top": 123,
+    "speed_average": 123.4,
+    "throttle_average": 12,
+    "brake_average": 1
   }
 }
 ```
